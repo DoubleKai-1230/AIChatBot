@@ -6,13 +6,13 @@ from linebot import  LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import google.generativeai as genai
-
+import os
 # line_bot_api = LineBotApi('你的 CHANNEL_ACCESS_TOKEN')
 # handler = WebhookHandler('你的 CHANNEL_SECRET')
 line_bot_api = LineBotApi('2r0uM+EyclNAfJobqVNqgas6ATfvdR6Ux/mThqABbB+LhR9ZD5VCsXtJAPLUA7BHoQ8kz1RbYvtYDfKOzi4HdAANLBvB+GXh0brqW2a7hERYoKyF8wUPG+FHpBkx04XKHlB8O6NK7Pm8JX7i/wHgmwdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('f6851b7663569c8da4020e8074c93b02')
 
-api_key = 'AIzaSyAAmRV7qkP76eLE0R_gREFUKPtqBJsL3qo'
+api_key = os.envior.get('gemini_api_key')
 genai.configure(api_key = api_key)
 
 @app.route("/callback", methods=['POST'])
